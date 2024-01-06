@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Video Player Example with Skippable Advertisement</title>
+    <title>Ultimate Video Player Example with M3U Playlist and Skippable Advertisement</title>
     <link rel="stylesheet" type="text/css" href="content/global.css">
     <script type="text/javascript" src="java/FWDUVPlayer.js"></script>
 </head>
@@ -32,21 +32,22 @@
                 showPlaylistByDefault: "no",
                 showPlaylistButtonAndPlaylist: "no",
                 startAtVideo: 0,
-                videos: [{
-                    source: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-                    title: "Your Video Title",
-                    description: "Your video description.",
-                    ads: [
-                        {
-                            type: "pre-roll",
-                            source: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
-                            skipToVideoText: "Skip Ad",
-                            skipToVideoButtonText: "Skip Ad",
-                            skipToVideoButtonBackgroundColor: "#000000",
-                            skipToVideoButtonTextColor: "#ffffff"
-                        }
-                    ]
-                }]
+                playlists: [
+                    {
+                        name: "M3U Playlist",
+                        source: "your-m3u-playlist-url.m3u",
+                        ads: [
+                            {
+                                type: "pre-roll",
+                                source: "your-advertisement-source.mp4",
+                                skipToVideoText: "Skip Ad",
+                                skipToVideoButtonText: "Skip Ad",
+                                skipToVideoButtonBackgroundColor: "#000000",
+                                skipToVideoButtonTextColor: "#ffffff"
+                            }
+                        ]
+                    }
+                ]
             });
         });
     </script>
