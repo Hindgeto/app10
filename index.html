@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Video Player Example with Skippable Advertisement</title>
+    <link rel="stylesheet" type="text/css" href="content/global.css">
+    <script type="text/javascript" src="java/FWDUVPlayer.js"></script>
+</head>
+
+<body>
+    <!-- Container div for the Ultimate Video Player -->
+    <div id="myDiv"></div>
+
+    <script type="text/javascript">
+        FWDUVPUtils.onReady(function () {
+            new FWDUVPlayer({
+                instanceName: "player1",
+                parentId: "myDiv",
+                playlistsId: "playlists",
+                mainFolderPath: "content",
+                skinPath: "minimal_skin_dark",
+                displayType: "responsive",
+                autoPlay: "yes",
+                loop: "no",
+                maxWidth: 980,
+                maxHeight: 552,
+                volume: 0.8,
+                showController: "yes",
+                showPlaylistsButtonAndPlaylists: "no",
+                showPlaylistByDefault: "no",
+                showPlaylistButtonAndPlaylist: "no",
+                startAtVideo: 0,
+                videos: [{
+                    source: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+                    title: "Your Video Title",
+                    description: "Your video description.",
+                    ads: [
+                        {
+                            type: "pre-roll",
+                            source: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+                            skipToVideoText: "Skip Ad",
+                            skipToVideoButtonText: "Skip Ad",
+                            skipToVideoButtonBackgroundColor: "#000000",
+                            skipToVideoButtonTextColor: "#ffffff"
+                        }
+                    ]
+                }]
+            });
+        });
+    </script>
+</body>
+
+</html>
